@@ -166,7 +166,7 @@ class MeanVarOpt(bt.Strategy):
         
         # Looping over each data feed and calculating its simple moving average using the 'bt.indicators.SMA' class
         for i, d in enumerate(self.datas):
-            self.SMA.append(bt.indicators.SMA(d.close, period=self.params.sma))
+            self.SMA.append(bt.indicators.EMA(d.close, period=self.params.sma))
         
         # Initializing an instance variable to store the selected stocks
         self.selected_stocks = []
